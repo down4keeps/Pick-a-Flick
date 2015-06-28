@@ -37,10 +37,10 @@ $.getJSON( "http://127.0.0.1:5000/neohackerz", function( data ) {
 
   $('.row').append(movies.join(''));
 
-//   $( "<div>", {
-//     "class": "row",
-//     html: movies.join( "" )
-//   }).appendTo( ".row" );
+});
+
+$('#menucontainer').click(function(event){
+  event.stopPropagation();
 });
 
 });
