@@ -4,20 +4,43 @@ $.getJSON( "http://127.0.0.1:5000/neohackerz", function( data ) {
   var movies = [];
   $.each( data, function( key, val ) {
     movies.push(
-    	'<div class="col-md-4"> \
-	  	<h2>' + val.show_title + '</h2> \
-	  	<img src="' + val.poster + '" /> \
-	  	<p>' + val.summary + '</p> \
-		</div>'
+// HAD TO ADD '\' TO THE END FOR LINE BREAKS!
+    	'<div class="col col-md-4"> \
+	  	<h2 class="movie-title">' + val.title + '</h2> \
+	  	<img src="' + val.posters.original.replace(/^.*?\/[\d]+x[\d]+\//,"http://") + '" /> \
+      <h5 style="display: block;">Your Rating:</h5> \
+      <fieldset class="score"> \
+      <legend>Score:</legend> \
+      <input type="radio" id="' + val.id + ' score-5" name="score-' + val.title + '" value="5"/> \
+      <label title="5 stars" for="' + val.id + ' score-5">5 stars</label> \
+      <input type="radio" id="' + val.id + ' score-4" name="score-' + val.title + '" value="4"/> \
+      <label title="4 stars" for="' + val.id + ' score-4">4 stars</label> \
+      <input type="radio" id="' + val.id + ' score-3" name="score-' + val.title + '" value="3"/> \
+      <label title="3 stars" for="' + val.id + ' score-3">3 stars</label> \
+      <input type="radio" id="' + val.id + ' score-2" name="score-' + val.title + '" value="2"/> \
+      <label title="2 stars" for="' + val.id + ' score-2">2 stars</label> \
+      <input type="radio" id="' + val.id + ' score-1" name="score-' + val.title + '" value="1"/> \
+      <label title="1 stars" for="' + val.id + ' score-1">1 stars</label> \
+      </fieldset> \
+	  	<p class="synopsis">' + val.synopsis + '</p> \
+      </div>'
 	);
+  }); // END EACH
 
-    console.log(val);
-  });
- 
-  $( "<div>", {
-    "class": "my-new-movie-list",
-    html: movies.join( "" )
-  }).appendTo( "body" );
+    movies.push(
+    '<div class="col-md-4"> \
+    <h2>Add New...</h2> \
+    <a href="#"><img src="img/filmstrip-add-512.png" style="max-width: 200px; margin: 20px auto;" /></a> \
+    <p>Search and Add new movie suggestions to your group!</p> \
+    </div>'
+  );
+
+  $('.row').append(movies.join(''));
+
+//   $( "<div>", {
+//     "class": "row",
+//     html: movies.join( "" )
+//   }).appendTo( ".row" );
 });
 
 });
