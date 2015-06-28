@@ -30,7 +30,7 @@ $.getJSON( "http://127.0.0.1:5000/neohackerz", function( data ) {
     movies.push(
     '<div class="col-md-4"> \
     <h2>Add New...</h2> \
-    <a href="#"><img src="img/filmstrip-add-512.png" style="max-width: 200px; margin: 20px auto;" /></a> \
+    <a href="search.html"><img src="img/filmstrip-add-512.png" style="max-width: 200px; margin: 20px auto;" /></a> \
     <p>Search and Add new movie suggestions to your group!</p> \
     </div>'
   );
