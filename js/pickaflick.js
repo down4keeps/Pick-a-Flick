@@ -13,16 +13,16 @@ $.getJSON( "http://127.0.0.1:5000/neohackerz", function( data ) {
       <h5 style="display: block;">Your Rating:</h5> \
       <fieldset class="score"> \
       <legend>Score:</legend> \
-      <input type="radio" id="score-5" name="score-' + val.title + '" value="5"/> \
-      <label title="5 stars" for="score-5">5 stars</label> \
-      <input type="radio" id="score-4" name="score-' + val.title + '" value="4"/> \
-      <label title="4 stars" for="score-4">4 stars</label> \
-      <input type="radio" id="score-3" name="score-' + val.title + '" value="3"/> \
-      <label title="3 stars" for="score-3">3 stars</label> \
-      <input type="radio" id="score-2" name="score-' + val.title + '" value="2"/> \
-      <label title="2 stars" for="score-2">2 stars</label> \
-      <input type="radio" id="score-1" name="score-' + val.title + '" value="1"/> \
-      <label title="1 stars" for="score-1">1 stars</label> \
+      <input type="radio" id="' + val.id + ' score-5" name="score-' + val.title + '" value="5"/> \
+      <label title="5 stars" for="' + val.id + ' score-5">5 stars</label> \
+      <input type="radio" id="' + val.id + ' score-4" name="score-' + val.title + '" value="4"/> \
+      <label title="4 stars" for="' + val.id + ' score-4">4 stars</label> \
+      <input type="radio" id="' + val.id + ' score-3" name="score-' + val.title + '" value="3"/> \
+      <label title="3 stars" for="' + val.id + ' score-3">3 stars</label> \
+      <input type="radio" id="' + val.id + ' score-2" name="score-' + val.title + '" value="2"/> \
+      <label title="2 stars" for="' + val.id + ' score-2">2 stars</label> \
+      <input type="radio" id="' + val.id + ' score-1" name="score-' + val.title + '" value="1"/> \
+      <label title="1 stars" for="' + val.id + ' score-1">1 stars</label> \
       </fieldset> \
 	  	<p class="synopsis">' + val.synopsis + '</p> \
       </div>'
