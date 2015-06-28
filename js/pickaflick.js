@@ -1,14 +1,17 @@
 $(document).ready(function(){
 
-
+$(document).on("click", "input", function(event) {
+  event.preventDefault(); 
+  //here you can also do all sort of things 
+});
 
 $.getJSON( "http://127.0.0.1:5000/neohackerz", function( data ) {
   var movies = [];
   $.each( data, function( key, val ) {
     movies.push(
 // HAD TO ADD '\' TO THE END FOR LINE BREAKS!
-    	'<div class="col-md-4"> \
-	  	<h2>' + val.title + '</h2> \
+    	'<div class="col col-md-4"> \
+	  	<h2 class="movie-title">' + val.title + '</h2> \
 	  	<img src="' + val.posters.original.replace(/^.*?\/[\d]+x[\d]+\//,"http://") + '" /> \
       <h5 style="display: block;">Your Rating:</h5> \
       <fieldset class="score"> \
@@ -27,13 +30,22 @@ $.getJSON( "http://127.0.0.1:5000/neohackerz", function( data ) {
 	  	<p class="synopsis">' + val.synopsis + '</p> \
       </div>'
 	);
-    console.log(val);
-  });
- 
-  $( "<div>", {
-    "class": "my-new-movie-list",
-    html: movies.join( "" )
-  }).insertBefore( ".row" );
+  }); // END EACH
+
+    movies.push(
+    '<div class="col-md-4"> \
+    <h2>Add New...</h2> \
+    <a href="#"><img src="img/filmstrip-add-512.png" style="max-width: 200px; margin: 20px auto;" /></a> \
+    <p>Search and Add new movie suggestions to your group!</p> \
+    </div>'
+  );
+
+  $('.row').append(movies.join(''));
+
+//   $( "<div>", {
+//     "class": "row",
+//     html: movies.join( "" )
+//   }).appendTo( ".row" );
 });
 
 });

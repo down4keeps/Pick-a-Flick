@@ -42,6 +42,9 @@
     }
 
     .col-md-4 {
+      display: inline-block;
+      float: none;
+      vertical-align: top;
       text-align: center;
     }
 
@@ -54,6 +57,7 @@
     .col-md-4 img {
       max-width: 200px;
       height: auto;
+      max-height: 300px;
       margin-left: auto;
       margin-right: auto;
     }
@@ -115,12 +119,13 @@
       margin-bottom: 0px;
     }
 
-    .synopsis {
-      overflow: hidden;
-      text-overflow: clip;
-      text-overflow: ellipsis;
-      text-overflow: "…";
-      height: 24px;
+    .synopsis,.movie-title {
+      white-space: nowrap;
+      width: 100%;                   
+      overflow: hidden; /* "overflow" value must be different from "visible" */ 
+      text-overflow:    ellipsis;
+    }
+
     }
 
   </style>
@@ -132,7 +137,7 @@
     <div class="jumbotron">
       <div class="container-narrow">
         <h1 style="text-align:center;">NeoHackerz</h1>
-        <p style="text-align:center;">Suggest, Review and Rate New Movies - OR - If you're ready...</p>
+        <p style="text-align:center;">Suggest, Review and Rate - OR - If you're ready...</p>
 
         <p style="text-align:center;"><button type="button" class="btn btn-primary btn-lg btn-block">Let Me Pick Your Flick!</button></p>
       </div>
@@ -141,41 +146,9 @@
     <div class="container">
       <!-- Example row of columns -->
       <div class="row">
-        <div class="col-md-4">
-          <h2>Add New...</h2>
-          <img src="img/filmstrip-add-512.png" style="max-width: 200px; margin: 20px auto;" />
-          <p>Search and Add new movie suggestions to your group!</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div>
 
-<!--         <div class="col-md-4">
-          <h2>The Big Lebowski</h2>
-          <img src="http://resizing.flixster.com/NaZiEIaHdb-oJaJ70TTJnnjCyq4=/180x270/dkpu1ddg7pbsk.cloudfront.net/movie/11/17/77/11177717_ori.jpg" />
-          <h5 style="display: block;">Your Rating:</h5>
-          <fieldset class="score">
-          <legend>Score:</legend>
-          <input type="radio" id="score-5" name="score" value="5"/>
-          <label title="5 stars" for="score-5">5 stars</label>
-          <input type="radio" id="score-4" name="score" value="4"/>
-          <label title="4 stars" for="score-4">4 stars</label>
-          <input type="radio" id="score-3" name="score" value="3"/>
-          <label title="3 stars" for="score-3">3 stars</label>
-          <input type="radio" id="score-2" name="score" value="2"/>
-          <label title="2 stars" for="score-2">2 stars</label>
-          <input type="radio" id="score-1" name="score" value="1"/>
-          <label title="1 stars" for="score-1">1 stars</label>
+          <!-- Dynamic JS here -->
 
-          </fieldset>
-
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div>
-        <div class="col-md-4">
-          <h2>The Big Lebowski</h2>
-          <img src="http://resizing.flixster.com/NaZiEIaHdb-oJaJ70TTJnnjCyq4=/180x270/dkpu1ddg7pbsk.cloudfront.net/movie/11/17/77/11177717_ori.jpg" />
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-       </div> -->
       </div>
       <hr>
 
