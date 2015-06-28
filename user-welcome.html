@@ -15,35 +15,48 @@
   <style>
 
     body {
-      background-color:#ffbd29;
+      background-color: black
     }
 
     div.group-box {
       box-sizing: border-box;
-      width: 50%;
-      border: 1em solid green;
+      width: 80%;
+      border: .7em solid white;
+
+/*      #24C800; //green #FE1307 //orange  #ffbd29; //orange official
+*/     
       float: center;
       text-align: center;
     }
 
     h1{
+      font-size: 2.9em;
       font-family: 'Lobster', cursive;
-      }
+      color: #FE1307;
+/*     #ffbd29;
+*/  
+   }
 
     h2{
       font-size: 1.8em;
+      color: #ffbd29;
     }
 
 
     h3{
       font-size: 1.6em;
+      color: white;
     }
 
     img {
       float: center;
       width: 90%;
       height: auto;
-      margin: 0 auto;
+      margin: 2em auto 0;
+    }
+
+  .btn-main {
+      background-color: #FE1307;
     }
 
   </style>  
@@ -54,22 +67,22 @@
       <h2>Who are you watching with?</h2>
       <br>
           <div class="col-md-4">
-            <div class="group-box btn btn-primary">
-              <img src=https://placekitten.com/g/200/300 />
+            <a href="neohackerz.html"><div class="group-box btn btn-main">
+              <img src="img/hackers-watch-movie-square.jpg" />
               <h3>NeoHackerz</h3>
-            </div>
+            </div></a>
           </div>
           <div class="col-md-4">
-            <div class="group-box btn btn-primary">
-              <img src=https://placekitten.com/g/200/300 />
+            <a href="neohackerz.html"><div class="group-box btn btn-main">
+              <img src="img/roommates-scary-movie-300x300.jpg" />
               <h3>Roomies</h3>
-            </div>
+            </div></a>
           </div>
           <div class="col-md-4">
-            <div class="group-box btn btn-success">
-            <img src=https://placekitten.com/g/200/300 />
-            <h3>Add a Group</h3>
-          </div>
+            <a href="#"><div class="group-box btn btn-success">
+            <img src="img/movie-theatre.jpg" />
+            <h3>Create New Group</h3>
+          </div></a>
       </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
