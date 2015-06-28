@@ -1,10 +1,5 @@
 $(document).ready(function(){
 
-$(document).on("click", "input", function(event) {
-  event.preventDefault(); 
-  //here you can also do all sort of things 
-});
-
 $.getJSON( "http://127.0.0.1:5000/neohackerz", function( data ) {
   var movies = [];
   $.each( data, function( key, val ) {
