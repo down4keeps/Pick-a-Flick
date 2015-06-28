@@ -9,6 +9,7 @@
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -18,6 +19,15 @@
     <![endif]-->
 
   <style>
+
+    .jumbotron {
+      background-color:#ffbd29;
+    }
+
+    h1{
+      font-family: 'Lobster', cursive;
+      }
+
     .container-narrow {
       max-width: 750px;
       margin-left: auto;
@@ -40,15 +50,89 @@
       margin-left: auto;
       margin-right: auto;
     }
+
+    .col-md-4 img {
+      max-width: 200px;
+      height: auto;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    input {
+      position:absolute;
+      top: -2em;
+      clip:rect(0,0,0,0);
+    }
+
+    .score {
+      unicode-bidi: bidi-override;
+      direction: rtl;
+      text-align: center;
+      border: 0;
+      font-size: 0;
+    }
+    .score legend {
+      overflow: hidden;
+      height: 0;
+    }
+    .score label {
+      font-size: 32px; font-size: 2rem;
+      line-height: 32px; line-height: 2rem;
+      display: inline-block;
+      position: relative;
+      text-align: center;
+      width: 1.2em;
+      height: 1em;
+      overflow: hidden;
+      text-indent: 100%;
+    }
+    .score label:before {
+       content: "☆";
+       position: absolute;
+       top: 0; left: 0; right: 0; bottom: 0;
+       text-indent: 0;
+       line-height: 1em;
+       color: #aaa;
+    }
+    .score label:hover:before,
+    .score label:hover ~ label:before,
+    .score input:checked ~ label:before {
+       content: "★";
+       color: #ffbb04;
+    }
+    .score label:active {
+      position: relative;
+      top: 1px;
+    }
+
+    legend {
+      border-bottom: 0;
+      margin-bottom: 0;
+    }
+
+    h5 {
+      margin-top: 5px;
+      margin-bottom: 0px;
+    }
+
+    .synopsis {
+      overflow: hidden;
+      text-overflow: clip;
+      text-overflow: ellipsis;
+      text-overflow: "…";
+      height: 24px;
+    }
+
   </style>
 
   </head>
 
+<body>
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
       <div class="container-narrow">
-        <h1 style="text-align:center;">NeoHackerz Group</h1>
-        <p style="text-align:center;">Review and rate any new suggestions - or if you're ready...</p>
+        <h1 style="text-align:center;">NeoHackerz</h1>
+        <p style="text-align:center;">Suggest, Review and Rate New Movies - OR - If you're ready...</p>
 
         <p style="text-align:center;"><button type="button" class="btn btn-primary btn-lg btn-block">Let Me Pick Your Flick!</button></p>
       </div>
@@ -58,25 +142,41 @@
       <!-- Example row of columns -->
       <div class="row">
         <div class="col-md-4">
-          <h2>The Big Lebowski</h2>
-          <img src="http://resizing.flixster.com/NaZiEIaHdb-oJaJ70TTJnnjCyq4=/180x270/dkpu1ddg7pbsk.cloudfront.net/movie/11/17/77/11177717_ori.jpg" />
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+          <h2>Add New...</h2>
+          <img src="img/filmstrip-add-512.png" style="max-width: 200px; margin: 20px auto;" />
+          <p>Search and Add new movie suggestions to your group!</p>
           <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
         </div>
-        <div class="col-md-4">
-          <h2>The Big Lebowski</h2>
-          <img src="http://resizing.flixster.com/NaZiEIaHdb-oJaJ70TTJnnjCyq4=/180x270/dkpu1ddg7pbsk.cloudfront.net/movie/11/17/77/11177717_ori.jpg" />
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-       </div>
-        <div class="col-md-4">
-          <h2>The Big Lebowski</h2>
-          <img src="http://resizing.flixster.com/NaZiEIaHdb-oJaJ70TTJnnjCyq4=/180x270/dkpu1ddg7pbsk.cloudfront.net/movie/11/17/77/11177717_ori.jpg" />
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div>
-      </div>
 
+<!--         <div class="col-md-4">
+          <h2>The Big Lebowski</h2>
+          <img src="http://resizing.flixster.com/NaZiEIaHdb-oJaJ70TTJnnjCyq4=/180x270/dkpu1ddg7pbsk.cloudfront.net/movie/11/17/77/11177717_ori.jpg" />
+          <h5 style="display: block;">Your Rating:</h5>
+          <fieldset class="score">
+          <legend>Score:</legend>
+          <input type="radio" id="score-5" name="score" value="5"/>
+          <label title="5 stars" for="score-5">5 stars</label>
+          <input type="radio" id="score-4" name="score" value="4"/>
+          <label title="4 stars" for="score-4">4 stars</label>
+          <input type="radio" id="score-3" name="score" value="3"/>
+          <label title="3 stars" for="score-3">3 stars</label>
+          <input type="radio" id="score-2" name="score" value="2"/>
+          <label title="2 stars" for="score-2">2 stars</label>
+          <input type="radio" id="score-1" name="score" value="1"/>
+          <label title="1 stars" for="score-1">1 stars</label>
+
+          </fieldset>
+
+          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+          <h2>The Big Lebowski</h2>
+          <img src="http://resizing.flixster.com/NaZiEIaHdb-oJaJ70TTJnnjCyq4=/180x270/dkpu1ddg7pbsk.cloudfront.net/movie/11/17/77/11177717_ori.jpg" />
+          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+       </div> -->
+      </div>
       <hr>
 
       <footer style="min-height: 50px;">
